@@ -20,33 +20,17 @@
   <meta name="description" content="늘봄 업무 처리 시 필요한 계약 요구, 수강료 징수요구, 환불, 강사료 지급 요구, 결재·협조·공람 기준을 정리했습니다." />
   <link rel="icon" href="/static/favicon.ico" />
   <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/site-config.js"></script>
   <script defer src="/static/site.js"></script>
 </head>
-<body>
+<body data-page-key="admin-accounting-guide">
   <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a class="logo" href="/"><span class="logo-mark">NB</span><span>늘봄학교 실무 허브</span></a>
-      <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="/study-method/">업무 공부</a>
-        <a href="/training-proposal/">연수 제안서</a>
-        <a href="/admin-accounting-guide/" aria-current="page">행정·회계 가이드</a>
-        <a href="/references/">근거자료</a>
-      </nav>
-    </div>
-  </header>
+  <div data-site-header></div>
 
   <main class="container" id="main">
-    <section class="page-hero">
-      <div class="breadcrumb"><a href="/">홈</a><span>/</span><span>행정·회계 업무 가이드</span></div>
-      <p class="page-kicker">Track 03 · Admin & Accounting</p>
-      <h1>늘봄 업무 처리 시 필요한 행정·회계 업무 가이드</h1>
-      <p class="page-lead">행정실이 바로 회계처리할 수 있도록 늘봄지원실에서 완성해야 할 자료의 기준을 정리했습니다. 계약·징수·환불·지급은 “근거, 대상, 금액, 증빙, 결재선”이 핵심입니다.</p>
-      <div class="action-row no-print"><button class="btn ghost" type="button" data-print>인쇄하기</button><button class="btn primary" type="button" data-copy-target="feeTemplate">징수요구 예시 복사</button></div>
-      <nav class="local-nav no-print" aria-label="페이지 목차"><div class="chip-row"><a class="chip" href="#roles">업무 구분</a><a class="chip" href="#plan-budget">운영계획·예산</a><a class="chip" href="#contract">계약 요구</a><a class="chip" href="#fee-collection">수강료 징수</a><a class="chip" href="#grade3">초3 지원</a><a class="chip" href="#refund">환불</a><a class="chip" href="#instructor-payment">강사료 지급</a><a class="chip" href="#approval">결재·공람</a><a class="chip" href="#final-check">최종점검</a></div></nav>
-    </section>
+    <div data-page-hero></div>
 
-    <section class="section" id="workflow">
+<section class="section" id="workflow">
       <p class="page-kicker">Workflow</p>
       <h2>0. 처리 흐름 한눈에 보기</h2>
       <div class="feature-grid">
@@ -232,8 +216,6 @@
 
     <div class="footer-note"><p>이 가이드는 행정실 제출자료의 최소 기준입니다. 학교별 세부 절차는 학교 자체 운영계획, 계약서, 결재선, 교육지원청 안내에 따라 조정하세요.</p></div>
   </main>
-
-  <footer class="site-footer"><div class="site-footer-inner"><span>© <span id="year"></span> 늘봄학교 실무 허브</span><span>행정·회계 업무 가이드</span></div></footer>
-  <div class="toast" id="toast"></div>
+<div class="toast" id="toast"></div>
 </body>
 </html>

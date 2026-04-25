@@ -1,54 +1,41 @@
-# 늘봄학교 행정·회계 실무 허브
+# 늘봄학교 실무 가이드
 
-늘봄 관련 내용만 분리한 독립 정적 사이트입니다. 별도 빌드 과정 없이 HTML/CSS/JS 파일을 새 도메인에 업로드하면 됩니다.
+늘봄 관련 내용만 분리한 새 도메인용 정적 사이트입니다.
 
-## 구성
+## 핵심 변경사항
+
+- 상단 사이트 제목, 로고 문구, 주요 메뉴, 페이지별 상단 문구, 페이지 목차, 푸터 문구를 `static/site-config.js`로 분리했습니다.
+- 개별 HTML은 `data-page-key`만 지정하고, 공통 헤더·상단 히어로·목차·푸터는 `static/site.js`가 자동 렌더링합니다.
+- 모든 페이지에 공통 “위로” 버튼을 추가했습니다.
+- 기존 문구는 최대한 유지했습니다.
+
+## 주요 페이지
+
+- `/` : 메인
+- `/study-method/` : 업무 공부하는 방법
+- `/training-proposal/` : 늘봄지원실장 및 늘봄학교전담사 역량 강화 연수 제안서
+- `/admin-accounting-guide/` : 늘봄 업무 처리 시 필요한 행정·회계 업무 가이드
+- `/references/` : 근거자료
+- `/file-download/docs/` : PDF 자료 다운로드
+
+## 공통 문구 수정 방법
+
+사이트 제목, 카테고리, 상단 메뉴명, 페이지별 상단 문구를 바꾸려면 다음 파일만 수정하면 됩니다.
 
 ```text
-/
-├─ index.html
-├─ study-method/index.html
-├─ training-proposal/index.html
-├─ admin-accounting-guide/index.html
-├─ references/index.html
-├─ file-download/docs/
-│  ├─ 2025-neulbom-work-scope.pdf
-│  ├─ 2026-the-jarram-neulbom-plan.pdf
-│  ├─ 2026-grade3-afterschool-support-guide.pdf
-│  ├─ 2026-gangwon-neulbom-guide.pdf
-│  ├─ neulbom-work-division-detail.pdf
-│  ├─ 2026-the-jarram-afterschool-plan.pdf
-│  ├─ 2026-school-administration-handbook.pdf
-│  ├─ 2026-school-budget-guideline.pdf
-│  └─ gangwon-public-school-accounting-rules.pdf
-├─ static/style.css
-├─ static/site.js
-├─ static/alien.jpg
-├─ static/favicon.ico
-├─ 404.html
-├─ robots.txt
-├─ CNAME.example
-└─ sitemap.xml.example
+static/site-config.js
 ```
 
-## 배포 방법
+예를 들어 메뉴명을 바꾸려면 `navigation` 배열의 `label`을 수정하고, 페이지 상단 제목·설명·목차를 바꾸려면 `pages` 객체의 해당 `pageKey` 항목을 수정합니다.
 
-### GitHub Pages
+각 HTML의 `body`에는 다음처럼 페이지 키만 유지하면 됩니다.
 
-1. 이 폴더의 내용을 새 저장소 루트에 업로드합니다.
-2. `CNAME.example` 파일명을 `CNAME`으로 바꾸고 안의 `example.com`을 실제 도메인으로 변경합니다.
-3. `sitemap.xml.example` 파일명을 `sitemap.xml`으로 바꾸고 `https://example.com`을 실제 도메인으로 변경합니다.
-4. GitHub Pages를 `main` 브랜치 루트로 설정합니다.
+```html
+<body data-page-key="study-method">
+```
 
-### Cloudflare Pages / Netlify
+## 배포
 
-1. 이 폴더를 그대로 업로드합니다.
-2. Build command는 비워 둡니다.
-3. Publish directory는 업로드한 루트 폴더입니다.
-4. 도메인을 연결한 후 `sitemap.xml.example`을 실제 도메인으로 수정합니다.
+정적 HTML/CSS/JS만 사용합니다. GitHub Pages, Cloudflare Pages, Netlify, 일반 웹호스팅에 업로드할 수 있습니다.
 
-## 운영 메모
-
-- Google Analytics 등 추적 스크립트는 넣지 않았습니다. 새 도메인용 측정 ID가 생기면 각 HTML의 `<head>`에 별도로 추가하세요.
-- PDF 파일을 갱신할 때는 기존 파일명을 유지하면 내부 링크를 수정하지 않아도 됩니다.
-- 이 사이트는 강원특별자치도교육청 기준의 비공식 실무 보조 자료입니다. 최종 기준은 해당 연도 공문, 학교 자체 운영계획, 학교운영위원회 심의자료, 계약서, K-에듀파인 처리 기준, 행정실 검토 결과를 우선합니다.
+새 도메인 연결 시 `CNAME.example`을 참고하여 실제 도메인을 `CNAME`에 입력하고, 필요 시 `sitemap.xml.example`의 도메인을 교체하세요.

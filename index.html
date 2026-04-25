@@ -20,55 +20,22 @@
   <meta name="description" content="·문서등록대장 활용해서 업무 공부하는 방법<br/>·늘봄지원실장 및 늘봄전담사 역량 강화 연수 제안서(안)</br>·늘봄학교 운영 관련 행정·회계 업무 가이드" />
   <link rel="icon" href="/static/favicon.ico" />
   <link rel="stylesheet" href="/static/style.css" />
-  <script src="/static/footer.js"></script>
+  <script src="/static/site-config.js"></script>
   <script defer src="/static/site.js"></script>
 </head>
-<body>
+<body data-page-key="home">
   <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a class="logo" href="/" aria-label="늘봄지원실은 업무 공부 좀 해라"><span class="logo-mark">늘봄</span><span>늘봄학교 실무 가이드</span></a>
-      <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="/study-method/">업무 공부</a>
-        <a href="/training-proposal/">연수 제안서</a>
-        <a href="/admin-accounting-guide/">행정·회계 가이드</a>
-        <a href="/references/">근거자료</a>
-      </nav>
-    </div>
-  </header>
+  <div data-site-header></div>
 
   <main class="container wide" id="main">
-    <section class="hero hero-with-figure" aria-labelledby="hero-title">
-      <div>
-        <p class="page-kicker">Gangwon Neulbom Practical Site</p>
-        <h1 id="hero-title">늘봄지원실,<br />업무 공부 많이 합시다.</h1>
-        <p class="hero-lead">·문서등록대장 활용해서 업무 공부하는 방법<br/>·늘봄지원실장 및 늘봄전담사 역량 강화 연수 제안서(안)</br>·늘봄학교 운영 관련 행정·회계 업무 가이드</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#modules">사이트 구성 보기</a>
-          <a class="btn ghost" href="#boundary">업무 경계 보기</a>
-          <a class="btn ghost" href="#search">통합 검색</a>
-        </div>
-      </div>
-      <figure class="hero-figure" aria-hidden="true">
-        <img src="/static/alien.jpg" alt="" loading="eager" />
-      </figure>
-    </section>
+    <div data-page-hero></div>
 
-    <div class="notice-banner">
-      <strong>도교육청에서도 지원청에서도 학교장도, 나한테 니네 업무 가르치고 검토하래서 만듦.</strong> 
+<div class="notice-banner">
+      <strong>비공식 실무 보조 자료입니다.</strong> 최종 기준은 해당 연도 공문, 학교 자체 운영계획, 학교운영위원회 심의자료, 계약서, K-에듀파인 처리 기준, 행정실 검토 결과를 우선합니다.
     </div>
+    <div data-page-quick-nav></div>
 
-    <nav class="local-nav no-print" aria-label="빠른 이동">
-      <div class="chip-row">
-        <a class="chip" href="#modules">사이트 구성</a>
-        <a class="chip" href="#boundary">업무 경계</a>
-        <a class="chip" href="#search">통합 검색</a>
-        <a class="chip" href="#references">근거자료</a>
-        <a class="chip" href="#deploy">배포 메모</a>
-      </div>
-    </nav>
-
-    <section class="section" id="modules" aria-labelledby="modules-title">
+<section class="section" id="modules" aria-labelledby="modules-title">
       <p class="page-kicker">Three Tracks</p>
       <h2 id="modules-title">사이트 구성</h2>
       <p class="section-intro">반복 설명을 줄이려면 순서가 중요합니다. 먼저 스스로 자료를 찾는 방식, 다음은 교육청에 요구할 실무연수 구조, 마지막은 실제 제출자료 작성 기준입니다.</p>
@@ -99,6 +66,7 @@
               <li>실장·전담사 분반 교육</li>
               <li>수강료·강사료 실습</li>
               <li>계약·환불·공람 오류 사례</li>
+              <li>장학사 회신 초안</li>
             </ul>
           </div>
           <a class="btn primary" href="/training-proposal/">페이지 열기</a>
@@ -157,7 +125,7 @@
         <div class="search-meta"><p class="muted">검색어가 비어 있으면 전체 항목을 보여 줍니다.</p><p class="muted" id="siteSearchCount">총 0건</p></div>
         <div class="tool-grid" aria-live="polite">
           <article class="tool-card js-search-item" data-search="업무 공부 자기학습 자료 확인 운영계획 길라잡이 업무편람 문서등록대장 질문 양식 체크리스트"><p class="tool-title">업무 공부하는 방법</p><p class="tool-sub">확인 자료 순서, 문서등록대장 검색, 질문 양식</p><a class="btn primary" href="/study-method/">바로가기</a></article>
-          <article class="tool-card js-search-item" data-search="연수 제안 도교육청 교육지원청 실장 전담사 컨설팅 실습형 산출물 오류사례"><p class="tool-title">역량 강화 연수 제안서</p><p class="tool-sub">실습형 및 실무 위주 연수 필요</p><a class="btn primary" href="/training-proposal/">바로가기</a></article>
+          <article class="tool-card js-search-item" data-search="연수 제안 도교육청 교육지원청 실장 전담사 컨설팅 실습형 산출물 오류사례"><p class="tool-title">역량 강화 연수 제안서</p><p class="tool-sub">실습형 연수 주제, 분반 운영, 장학사 회신 초안</p><a class="btn primary" href="/training-proposal/">바로가기</a></article>
           <article class="tool-card js-search-item" data-search="행정 회계 계약 요구 수강료 징수 강사료 지급 지출품의 환불 과오납 K-에듀파인 공람 협조"><p class="tool-title">행정·회계 업무 가이드</p><p class="tool-sub">계약·징수·환불·지급·협조·공람 기준</p><a class="btn primary" href="/admin-accounting-guide/">바로가기</a></article>
           <article class="tool-card js-search-item" data-search="수강료 징수요구 수익자부담 스쿨뱅킹 CMS 카드 자유수강권 초3 지원 학부모부담"><p class="tool-title">수강료 징수요구</p><p class="tool-sub">수강생 명단, 학생별 산출내역, 총괄표</p><a class="btn primary" href="/admin-accounting-guide/#fee-collection">바로가기</a></article>
           <article class="tool-card js-search-item" data-search="강사료 지급 요구 출석부 운영일지 청구서 산출표 계약서 후불 지출품의"><p class="tool-title">강사료 지급 요구</p><p class="tool-sub">계약서 단가, 출석부 대조, 강사별 산출표</p><a class="btn primary" href="/admin-accounting-guide/#instructor-payment">바로가기</a></article>
@@ -180,8 +148,19 @@
       <div class="action-row"><a class="btn primary" href="/references/">전체 근거자료 페이지 열기</a></div>
     </section>
 
-  </main>
+    <section class="section" id="deploy" aria-labelledby="deploy-title">
+      <p class="page-kicker">Deploy Memo</p>
+      <h2 id="deploy-title">새 도메인 배포용 메모</h2>
+      <div class="info-grid">
+        <article class="info-card"><h3>그대로 업로드하면 되는 구조</h3><p class="muted">정적 HTML/CSS/JS만 사용합니다. GitHub Pages, Cloudflare Pages, Netlify, 일반 웹호스팅에 업로드할 수 있습니다.</p></article>
+        <article class="info-card"><h3>도메인 연결 시 바꿀 것</h3><p class="muted"><code>CNAME.example</code>을 참고해 실제 도메인명으로 <code>CNAME</code> 파일을 만들고, 필요 시 <code>sitemap.xml.example</code>의 도메인을 교체하면 됩니다.</p></article>
+      </div>
+    </section>
 
-  <div class="toast" id="toast"></div>
+    <div class="footer-note">
+      <p><strong>구성 기준:</strong> 늘봄지원실과 행정실 업무 경계, 2026학년도 THE자람 늘봄학교 운영 계획, 초3 방과후 프로그램 지원 안내, 2026회계 학교행정 업무편람, 2026년도 학교회계 예산편성 기본지침, 강원특별자치도 공립학교 회계규칙.</p>
+    </div>
+  </main>
+<div class="toast" id="toast"></div>
 </body>
 </html>

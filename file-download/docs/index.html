@@ -20,32 +20,17 @@
   <meta name="description" content="늘봄학교 행정·회계 실무 허브에 사용한 주요 공문, 운영계획, 업무편람, 회계규칙 PDF 자료입니다." />
   <link rel="icon" href="/static/favicon.ico" />
   <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/site-config.js"></script>
   <script defer src="/static/site.js"></script>
 </head>
-<body>
+<body data-page-key="references">
   <a class="skip-link" href="#main">본문 바로가기</a>
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a class="logo" href="/"><span class="logo-mark">NB</span><span>늘봄학교 실무 허브</span></a>
-      <nav class="site-nav" aria-label="주요 메뉴">
-        <a href="/study-method/">업무 공부</a>
-        <a href="/training-proposal/">연수 제안서</a>
-        <a href="/admin-accounting-guide/">행정·회계 가이드</a>
-        <a href="/references/" aria-current="page">근거자료</a>
-      </nav>
-    </div>
-  </header>
+  <div data-site-header></div>
 
   <main class="container" id="main">
-    <section class="page-hero">
-      <div class="breadcrumb"><a href="/">홈</a><span>/</span><span>근거자료</span></div>
-      <p class="page-kicker">Reference Documents</p>
-      <h1>근거자료</h1>
-      <p class="page-lead">사이트 내용의 근거로 사용한 늘봄·방과후·학교회계 관련 자료입니다. 최종 판단은 원문 공문과 학교 자체 운영계획을 우선합니다.</p>
-      <div class="action-row no-print"><button class="btn ghost" type="button" data-print>인쇄하기</button><a class="btn primary" href="/file-download/docs/">다운로드 폴더 페이지</a></div>
-    </section>
+    <div data-page-hero></div>
 
-    <section class="section">
+<section class="section">
       <p class="page-kicker">Neulbom</p>
       <h2>늘봄·방과후 관련</h2>
       <div class="doc-grid">
@@ -70,8 +55,6 @@
 
     <div class="footer-note"><p>PDF 파일은 사이트와 함께 배포되는 참고자료입니다. 자료 갱신 시 파일명은 유지하고 원문만 교체하면 내부 링크를 수정하지 않아도 됩니다.</p></div>
   </main>
-
-  <footer class="site-footer"><div class="site-footer-inner"><span>© <span id="year"></span> 늘봄학교 실무 허브</span><span>근거자료</span></div></footer>
-  <div class="toast" id="toast"></div>
+<div class="toast" id="toast"></div>
 </body>
 </html>
