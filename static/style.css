@@ -2750,3 +2750,195 @@ button.btn.small {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   Image zoom / fullscreen viewer
+   클릭하면 화면 전체 확대되는 이미지 뷰어
+   사용법:
+   <details class="img-zoom">
+     <summary><img src="..." alt="..."></summary>
+   </details>
+   ========================================================= */
+
+/* 여러 이미지를 카드형으로 배치할 때 */
+.image-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: var(--space-4) 0;
+}
+
+.image-card {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.image-card figcaption,
+.img-caption {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
+
+/* 이미지 확대 기본 구조 */
+details.img-zoom {
+  margin: 0;
+}
+
+details.img-zoom > summary {
+  position: relative;
+  display: block;
+  list-style: none;
+  cursor: zoom-in;
+  border-radius: var(--r-lg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+details.img-zoom > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.img-zoom > summary::marker {
+  content: "";
+}
+
+/* 썸네일 이미지 */
+details.img-zoom > summary img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  transition:
+    border-color 150ms ease,
+    filter 150ms ease;
+}
+
+details.img-zoom > summary:hover img {
+  border-color: var(--border-strong);
+  filter: brightness(0.98);
+}
+
+/* 썸네일 위 안내 문구 */
+details.img-zoom > summary::after {
+  content: "클릭해서 크게 보기";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+  padding: 6px 10px;
+  border-radius: var(--r-pill);
+  background: oklch(10% 0 0 / 0.62);
+  color: var(--accent-fg);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease;
+  pointer-events: none;
+}
+
+details.img-zoom > summary:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 확대 상태: summary 자체가 전체 화면 오버레이가 됨 */
+details.img-zoom[open] > summary {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 32px);
+  background: oklch(10% 0 0 / 0.82);
+  cursor: zoom-out;
+}
+
+/* 확대 상태 안내 문구 */
+details.img-zoom[open] > summary::after {
+  content: "클릭하면 닫기";
+  position: fixed;
+  left: 50%;
+  right: auto;
+  bottom: 16px;
+  transform: translateX(-50%);
+  opacity: 1;
+  padding: 7px 12px;
+  background: oklch(10% 0 0 / 0.62);
+  color: var(--accent-fg);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+}
+
+/* 확대 이미지 */
+details.img-zoom[open] > summary img {
+  width: auto;
+  max-width: min(96vw, 1440px);
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: var(--r-lg);
+  border: 1px solid oklch(100% 0 0 / 0.24);
+  background: var(--surface);
+  box-shadow: 0 24px 80px oklch(5% 0 0 / 0.42);
+  filter: none;
+}
+
+/* 확대 중 배경 스크롤 방지 */
+@supports selector(body:has(details[open])) {
+  body:has(details.img-zoom[open]) {
+    overflow: hidden;
+  }
+}
+
+/* 모바일 보정 */
+@media (max-width: 640px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  details.img-zoom[open] > summary {
+    padding: 10px;
+  }
+
+  details.img-zoom[open] > summary img {
+    max-width: 96vw;
+    max-height: 88vh;
+  }
+
+  details.img-zoom > summary::after {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 프린트 시 확대 모달 숨김 처리 */
+@media print {
+  details.img-zoom[open] > summary {
+    position: static !important;
+    display: block !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  details.img-zoom[open] > summary img {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    box-shadow: none !important;
+  }
+
+  details.img-zoom > summary::after {
+    display: none !important;
+  }
+}
+
+
