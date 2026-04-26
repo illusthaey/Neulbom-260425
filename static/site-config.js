@@ -28,8 +28,8 @@ window.NEULBOM_SITE_CONFIG = {
       hero: {
         type: "home",
         kicker: "Gangwon Neulbom Practical Site",
-        titleHtml: "늘봄 업무,<br />스스로 공부합시다.",
-        lead: "본인 업무는 스스로 업무 자료 찾아보고 공부하고 검토해서 행정실 검토 없이 혼자 힘으로 처리할 수 있도록 합시다.",
+        titleHtml: "늘봄 업무,<br />담당자 스스로 공부합시다.",
+        lead: "본인 업무는 스스로 업무 자료 찾아보고 공부하고 연구해서 행정실 검토 없이 혼자 힘으로 처리할 수 있도록 합시다.",
         image: "/static/alien.jpg",
         actions: [
           { label: "사이트 구성", href: "#modules", variant: "primary" },
