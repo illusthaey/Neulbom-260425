@@ -74,12 +74,12 @@ window.NEULBOM_SITE_CONFIG = {
     },
 
     "study-method-example": {
-      browserTitle: "업무 공부하는 방법 | 늘봄학교 행정 실무 가이드",
-      footerLabel: "막힌 업무 해결 방법 찾는 예시 - 서식 변경 요청",
+      browserTitle: "막힌 업무 방법 탐색 예시 | 늘봄학교 행정 실무 가이드",
+      footerLabel: "막힌 업무 해결 방법 탐색 예시 - 서식 변경 요청",
       hero: {
-        breadcrumb: "자기주도적 업무 해결 방법 / 서식 변경 요청 시",
+        breadcrumb: "자기주도적 업무 해결 방법 / 서식 변경 요청 시 /",
         kicker: "예시 01 · 서식 변경 요청이 들어왔을 때",
-        title: "징수요구 서식 수정 요구를 받았는데 어떻게 고쳐야할지 모르겠을 때",
+        title: "징수요구 서식을 수정하라고 했는데<br/> 어떻게 고쳐야할지 모르겠다.",
         lead: "문서등록대장에서 이전 업무 처리 내역을 찾아봅시다.",
         actions: [
           { label: "예시1: 징수요구 서식을 어떻게 고쳤어야 했는지 모르겠을 때", href: "/study-method/example/", variant: "primary", attrs: { target: "_blank", rel: "noopener noreferrer" } },
