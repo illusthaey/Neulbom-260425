@@ -73,6 +73,30 @@ window.NEULBOM_SITE_CONFIG = {
       }
     },
 
+    "study-method-example": {
+      browserTitle: "업무 공부하는 방법 | 늘봄학교 행정 실무 가이드",
+      footerLabel: "징수요구 서식 수정 요구를 받았는데 어떻게 고쳐야할지 모르겠을 때",
+      hero: {
+        breadcrumb: "징수요구 서식 수정 요구를 받았는데 어떻게 고쳐야할지 모르겠을 때",
+        kicker: "Track 01 · Self Study",
+        title: "징수요구 서식 수정 요구를 받았는데 어떻게 고쳐야할지 모르겠을 때",
+        lead: "문서등록대장에서 이전 업무 처리 내역을 찾아봅시다.",
+        actions: [
+          { label: "예시1: 징수요구 서식을 어떻게 고쳤어야 했는지 모르겠을 때", href: "/study-method/example/", variant: "primary", attrs: { target: "_blank", rel: "noopener noreferrer" } },
+          { label: "인쇄하기", type: "button", variant: "ghost", attrs: { "data-print": "" } }
+        ],
+        toc: [
+          { label: "기본 원칙", href: "#principle" },
+          { label: "확인 자료", href: "#sources" },
+          { label: "문서등록대장 검색", href: "#records-search" },
+          { label: "질문 양식", href: "#question-template" },
+          { label: "4주 계획", href: "#four-weeks" },
+          { label: "월별 루틴", href: "#monthly-routine" },
+          { label: "자기점검표", href: "#checklist" }
+        ]
+      }
+    },
+
     "training-proposal": {
       browserTitle: "역량 강화 연수 제안서 | 늘봄학교 행정 실무 가이드",
       footerLabel: "역량 강화 연수 제안서",
