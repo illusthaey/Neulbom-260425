@@ -1,1 +1,620 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex" />
+  <meta name="color-scheme" content="light" />
+  <title>늘봄학교 한입 가이드</title>
+  <meta name="x-brand-title" content="한입 가이드 | {masterBrand}" />
+  <meta name="description" content="자주 묻는 학교행정 질문을 8개 업무 분야 카드로 짧게 정리한 FAQ형 안내입니다." />
+  <link rel="canonical" href="https://eduworkhaey.co.kr/a-bite/" />
 
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="고주무관의 쉬운 학교행정" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="한입 가이드 — 고주무관의 쉬운 학교행정" />
+  <meta property="og:description" content="자주 묻는 학교행정 질문을 8개 업무 분야 카드로 짧게 정리한 FAQ형 안내입니다." />
+  <meta property="og:url" content="https://eduworkhaey.co.kr/a-bite/" />
+  <meta property="og:image" content="https://eduworkhaey.co.kr/static/alien.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="500" />
+  <meta property="og:image:alt" content="고주무관 캐릭터" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="한입 가이드 — 고주무관의 쉬운 학교행정" />
+  <meta name="twitter:description" content="자주 묻는 학교행정 질문을 카드로 짧게 정리한 FAQ형 안내입니다." />
+  <meta name="twitter:image" content="https://eduworkhaey.co.kr/static/alien.jpg" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B6PE24NSKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B6PE24NSKH');
+  </script>
+
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/brand-config.js"></script>
+  <script defer src="/static/brand-ui.js"></script>
+  <script src="/static/footer.js"></script>
+  <script src="/static/global-loader.js?v=2"></script>
+
+  <style>
+    /* a-bite (FAQ) — page-specific components.
+       Uses global tokens defined in /static/style.css. */
+
+    body.modal-open { overflow: hidden; }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-2);
+      margin-top: var(--space-3);
+    }
+
+    .toc-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 14px;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--r-pill);
+      font-size: var(--fs-sm);
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+    }
+    .toc-link:hover {
+      border-color: var(--border-strong);
+      color: var(--text);
+      background: var(--surface-2);
+    }
+
+    .result-panel { display: none; }
+    .result-panel.is-active { display: block; }
+
+    .result-top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2) var(--space-3);
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--space-4);
+    }
+
+    .result-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+    }
+
+    .result-meta h2 { margin: 0; }
+
+    .result-text {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+    }
+
+    .work-section {
+      margin-top: var(--space-7);
+      scroll-margin-top: 24px;
+    }
+    .work-section.is-hidden-section { display: none; }
+
+    .section-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-2) var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .section-head h2 { margin: 0; }
+    .section-head p {
+      margin: var(--space-1) 0 0;
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .work-card {
+      position: relative;
+      display: grid;
+      gap: var(--space-2);
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      cursor: pointer;
+      text-align: left;
+      outline: none;
+      transition: border-color 150ms ease, background-color 150ms ease;
+    }
+    .work-card:hover,
+    .work-card:focus-visible {
+      border-color: var(--border-strong);
+      background: var(--surface-2);
+    }
+    .work-card:focus-visible {
+      outline: 2px solid var(--ring);
+      outline-offset: 2px;
+    }
+    .work-card.is-hidden-by-search { display: none; }
+    .work-card.is-search-clone { background: var(--surface-2); }
+
+    .card-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 22px;
+      padding: 0 8px;
+      background: var(--surface-2);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--r-pill);
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      font-weight: 500;
+    }
+
+    .work-card.is-search-clone .card-number {
+      background: var(--surface);
+    }
+
+    .card-title {
+      margin: 0;
+      font-size: var(--fs-md);
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--text);
+      letter-spacing: -0.015em;
+    }
+
+    .card-desc {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 980px) {
+      .toc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .toc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Modal overlay */
+    .card-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-5);
+      background: oklch(15% 0.01 255 / 0.55);
+    }
+    .card-overlay[hidden] { display: none; }
+
+    .overlay-card {
+      position: relative;
+      width: min(720px, 100%);
+      max-height: min(86vh, 880px);
+      overflow: auto;
+      padding: var(--space-6) var(--space-5) var(--space-5);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      box-shadow: 0 24px 60px oklch(15% 0.01 255 / 0.18);
+      cursor: zoom-out;
+      animation: zoomIn 150ms ease;
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .overlay-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 32px; height: 32px;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--r-pill);
+      font-size: 18px; line-height: 1;
+      cursor: pointer;
+    }
+    .overlay-close:hover { color: var(--text); border-color: var(--border-strong); }
+
+    .overlay-head {
+      padding-right: var(--space-7);
+      margin-bottom: var(--space-4);
+    }
+
+    .overlay-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+
+    .overlay-title {
+      margin: 0 0 var(--space-2);
+      font-size: var(--fs-2xl);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+    }
+
+    .overlay-summary {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: var(--fs-md);
+    }
+
+    .overlay-lines {
+      display: grid;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+    }
+
+    .overlay-line {
+      margin: 0;
+      padding: 12px 14px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      color: var(--text);
+      font-size: var(--fs-sm);
+      line-height: 1.6;
+    }
+
+    .detail-link[hidden] { display: none; }
+
+    .overlay-guide {
+      margin: var(--space-3) 0 0;
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+    }
+  </style>
+</head>
+<body>
+  <main class="container wide">
+    <p class="page-kicker" data-brand-key="masterBrand">고주무관의 쉬운 학교행정</p>
+    <h1>한입 가이드</h1>
+    <p class="lead" data-brand-template="{schoolShortName} 교직원이 자주 묻는 학교행정 질문을 짧게 정리한 카드형 안내입니다.">문막초 교직원이 자주 묻는 학교행정 질문을 짧게 정리한 카드형 안내입니다.</p>
+
+    <nav class="chip-row page-breadcrumb" aria-label="주요 메뉴">
+      <a class="chip" data-brand-route="home" href="/">홈</a>
+      <a class="chip" data-brand-route="howToUse" href="/notice/how-to-use/">처음 이용</a>
+      <a class="chip" data-brand-route="notice" href="/notice/">안내사항</a>
+      <a class="chip" data-brand-route="detailedGuide" href="/guide/">상세 가이드</a>
+      <a class="chip" data-brand-route="tools" href="/tools/">업무 도구</a>
+      <a class="chip" data-brand-route="downloads" href="/file-download/">서식 다운로드</a>
+    </nav>
+
+    <section class="section" aria-labelledby="tocTitle">
+      <h2 id="tocTitle">빠른 이동</h2>
+      <p class="muted section-intro">8개 업무 분야로 바로 이동합니다.</p>
+      <nav class="toc-grid" id="quickNav"></nav>
+    </section>
+
+    <section class="section" aria-labelledby="searchTitle">
+      <h2 id="searchTitle">통합 검색</h2>
+      <p class="muted section-intro">카드 제목, 1문장 설명, 5줄 상세설명, 검색 태그를 함께 검색합니다. 띄어쓰기로 여러 키워드를 입력하면 모두 포함하는 카드만 찾습니다.</p>
+
+      <div class="search-row">
+        <input
+          id="cardSearchInput"
+          type="search"
+          inputmode="search"
+          autocomplete="off"
+          placeholder="예: 기안, 병가, 추경, 수의계약, 물품, 학교운영위원회"
+          aria-label="카드 검색어 입력"
+        >
+        <button id="searchButton" class="btn primary" type="button">검색</button>
+        <button id="resetButton" class="btn ghost" type="button">초기화</button>
+      </div>
+    </section>
+
+    <section id="searchResultsSection" class="section result-panel" aria-live="polite" aria-labelledby="resultTitle">
+      <div class="result-top">
+        <div class="result-meta">
+          <h2 id="resultTitle">검색 결과</h2>
+          <span class="badge nums" id="resultCountBadge">0건</span>
+          <span class="badge" id="resultKeywordBadge">키워드 없음</span>
+        </div>
+        <p class="result-text" id="resultText">검색 결과 설명 영역입니다.</p>
+      </div>
+      <div id="searchResultsGrid" class="card-grid"></div>
+      <div id="searchEmptyBox" class="empty-box" hidden>검색 결과가 없습니다. 아래 전체 카드에서 다시 확인하거나 다른 키워드로 검색해 주세요.</div>
+    </section>
+
+    <div id="sectionsContainer" aria-label="업무 분야 카드 목록"></div>
+  </main>
+
+  <div id="cardOverlay" class="card-overlay" hidden aria-hidden="true">
+    <div id="overlayCard" class="overlay-card" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+      <button id="overlayCloseButton" class="overlay-close close-overlay" type="button" aria-label="닫기">×</button>
+
+      <div class="overlay-head">
+        <div class="overlay-badges">
+          <span class="badge" id="overlaySectionBadge">업무 분야</span>
+          <span class="badge nums" id="overlayCardNoBadge">카드 00</span>
+        </div>
+        <h2 id="overlayTitle" class="overlay-title">카드 제목</h2>
+        <p id="overlaySummary" class="overlay-summary">카드 썸네일의 1문장 설명이 이곳에 표시됩니다.</p>
+      </div>
+
+      <div id="overlayLines" class="overlay-lines"></div>
+
+      <a id="overlayDetailLink" class="btn primary" href="#" target="_blank" rel="noreferrer noopener" hidden>상세 가이드로 이동</a>
+      <div id="overlayHiddenTags" class="sr-only"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const TEMPLATE_DATA = [
+        { id: 'docs',            title: '문서·기록물',         subtitle: '기안, 접수, 시행, 편철, 이관 등 문서 흐름을 다룹니다.',                  topics: ['기안','검토·협조','결재','접수','시행','편철','이관','보존','사무인계'], extraTags: ['공문','문서','기록물'] },
+        { id: 'attendance',      title: '복무',                  subtitle: '휴가, 출장, 초과근무, 당직, 비상근무를 다룹니다.',                       topics: ['연가','병가','공가','특별휴가','출장','초과근무','당직','비상근무','복무점검'], extraTags: ['복무','휴가','출장'] },
+        { id: 'contractTeacher', title: '계약제교원',           subtitle: '채용에서 계약, 조회, 보고, 평가까지 묶어서 다룹니다.',                  topics: ['채용계획','공고','서류확인','결격조회','계약서작성','임용보고','4대보험','육아휴직','평가관리'], extraTags: ['기간제교원','강사','임용'] },
+        { id: 'budget',          title: '학교회계 예산·결산',  subtitle: '예산 편성부터 성립전예산, 추경, 이월, 결산, 공개까지 다룹니다.',          topics: ['본예산','성립전예산','추경','간주처리','이용','전용','이월','결산','공개'], extraTags: ['예산','결산','학교회계'] },
+        { id: 'spendContract',   title: '지출·계약',            subtitle: '지출 결의, 증빙, 업무추진비, 수의계약, 여비 정산을 다룹니다.',           topics: ['지출결의','증빙서류','업무추진비','수의계약','검수','카드지출','여비정산','선금·개산급','반환금'], extraTags: ['지출','계약','여비'] },
+        { id: 'assetsFacility',  title: '물품·시설',            subtitle: '물품 취득과 불용, 재물조사, 시설점검, 안전관리를 다룹니다.',             topics: ['취득','보관','불용','처분','재물조사','정수관리','시설점검','하자보수','안전관리'], extraTags: ['물품','시설','재산'] },
+        { id: 'schoolBoard',     title: '학교운영위원회',       subtitle: '위원 구성, 회의 운영, 안건 상정, 회의록, 공개를 다룹니다.',                 topics: ['구성','위원선출','회의준비','안건상정','예결산심의','회의록','공개','연수','사후관리'], extraTags: ['운영위원회','회의','심의'] },
+        { id: 'complaintInfo',   title: '민원·정보공개',        subtitle: '제증명, 민원 접수, 정보공개, 개인정보, FAQ를 다룹니다.',                  topics: ['제증명','민원접수','정보공개청구','학교정보공시','개인정보','민원회신','공문답변','기록열람','FAQ'], extraTags: ['민원','정보공개','개인정보'] }
+      ];
+
+      const quickNav = document.getElementById('quickNav');
+      const sectionsContainer = document.getElementById('sectionsContainer');
+      const searchInput = document.getElementById('cardSearchInput');
+      const searchButton = document.getElementById('searchButton');
+      const resetButton = document.getElementById('resetButton');
+      const resultSection = document.getElementById('searchResultsSection');
+      const resultGrid = document.getElementById('searchResultsGrid');
+      const resultEmptyBox = document.getElementById('searchEmptyBox');
+      const resultCountBadge = document.getElementById('resultCountBadge');
+      const resultKeywordBadge = document.getElementById('resultKeywordBadge');
+      const resultText = document.getElementById('resultText');
+
+      const overlay = document.getElementById('cardOverlay');
+      const overlayCard = document.getElementById('overlayCard');
+      const overlayCloseButton = document.getElementById('overlayCloseButton');
+      const overlaySectionBadge = document.getElementById('overlaySectionBadge');
+      const overlayCardNoBadge = document.getElementById('overlayCardNoBadge');
+      const overlayTitle = document.getElementById('overlayTitle');
+      const overlaySummary = document.getElementById('overlaySummary');
+      const overlayLines = document.getElementById('overlayLines');
+      const overlayDetailLink = document.getElementById('overlayDetailLink');
+      const overlayHiddenTags = document.getElementById('overlayHiddenTags');
+
+      let lastFocusedCard = null;
+
+      const normalize = (value) => String(value || '').toLowerCase().replace(/\s+/g, ' ').trim();
+      const escapeHtml = (value) => String(value || '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+      function makeTemplateCards(section) {
+        return section.topics.map((topic, index) => {
+          const cardNumber = String(index + 1).padStart(2, '0');
+          return {
+            id: section.id + '-' + cardNumber,
+            sectionId: section.id,
+            sectionTitle: section.title,
+            cardNumber: cardNumber,
+            title: topic + ' 템플릿',
+            thumbDescription: section.title + '에서 ' + topic + ' 핵심을 짧게 확인합니다.',
+            details: [
+              topic + ' 업무의 시작 조건과 적용 대상을 1줄로 적습니다.',
+              topic + ' 처리 순서 또는 체크리스트를 2번째 줄에 적습니다.',
+              topic + ' 자주 누락되는 서류나 시스템 입력 포인트를 3번째 줄에 적습니다.',
+              topic + ' 감사·민원에서 자주 걸리는 주의사항을 4번째 줄에 적습니다.',
+              topic + ' 상세 가이드 링크 또는 후속 업무를 5번째 줄에 적습니다.'
+            ],
+            tags: [section.title, topic, topic + ' 업무'].concat(section.extraTags || []),
+            detailUrl: '',
+            detailLabel: '상세 가이드로 이동'
+          };
+        });
+      }
+
+      const APP_DATA = TEMPLATE_DATA.map(section => Object.assign({}, section, { cards: makeTemplateCards(section) }));
+      const CARD_INDEX = [];
+      const CARD_MAP = new Map();
+
+      APP_DATA.forEach(section => {
+        section.cards.forEach(card => {
+          const indexedCard = Object.assign({}, card, {
+            subtitle: section.subtitle,
+            searchText: normalize([card.title, card.thumbDescription, section.title, section.subtitle].concat(card.details).concat(card.tags).join(' '))
+          });
+          CARD_INDEX.push(indexedCard);
+          CARD_MAP.set(indexedCard.id, indexedCard);
+        });
+      });
+
+      function renderCardMarkup(card, isSearchClone) {
+        const cloneClass = isSearchClone ? ' is-search-clone' : '';
+        return [
+          '<article class="work-card' + cloneClass + '" data-card-id="' + escapeHtml(card.id) + '" tabindex="0" role="button" aria-haspopup="dialog" aria-label="' + escapeHtml(card.title + ' 자세히 보기') + '">',
+          '  <span class="card-number">' + escapeHtml(card.cardNumber) + '</span>',
+          '  <h3 class="card-title">' + escapeHtml(card.title) + '</h3>',
+          '  <p class="card-desc">' + escapeHtml(card.thumbDescription) + '</p>',
+          '  <span class="sr-only">검색 키워드: ' + escapeHtml(card.tags.join(', ')) + '</span>',
+          '</article>'
+        ].join('');
+      }
+
+      function renderQuickNav() {
+        quickNav.innerHTML = APP_DATA.map(section =>
+          '<a class="toc-link" href="#' + escapeHtml(section.id) + '">' + escapeHtml(section.title) + '</a>'
+        ).join('');
+      }
+
+      function renderSections() {
+        sectionsContainer.innerHTML = APP_DATA.map(section => {
+          const cardsHtml = section.cards.map(card => renderCardMarkup(card, false)).join('');
+          return [
+            '<section id="' + escapeHtml(section.id) + '" class="section work-section" data-section-id="' + escapeHtml(section.id) + '">',
+            '  <div class="section-head">',
+            '    <div>',
+            '      <h2>' + escapeHtml(section.title) + '</h2>',
+            '      <p>' + escapeHtml(section.subtitle) + '</p>',
+            '    </div>',
+            '  </div>',
+            '  <div class="card-grid">',
+            cardsHtml,
+            '  </div>',
+            '</section>'
+          ].join('');
+        }).join('');
+      }
+
+      function restoreOriginalCards() {
+        sectionsContainer.querySelectorAll('.work-card.is-hidden-by-search').forEach(el => el.classList.remove('is-hidden-by-search'));
+        sectionsContainer.querySelectorAll('.work-section.is-hidden-section').forEach(el => el.classList.remove('is-hidden-section'));
+      }
+
+      function clearSearchResults() {
+        resultGrid.innerHTML = '';
+        resultEmptyBox.hidden = true;
+        resultSection.classList.remove('is-active');
+        resultCountBadge.textContent = '0건';
+        resultKeywordBadge.textContent = '키워드 없음';
+        resultText.textContent = '검색 결과 설명 영역입니다.';
+        restoreOriginalCards();
+      }
+
+      function updateSectionVisibility(hasActiveSearch) {
+        APP_DATA.forEach(section => {
+          const sectionEl = sectionsContainer.querySelector('[data-section-id="' + section.id + '"]');
+          if (!sectionEl) return;
+          const visibleCards = sectionEl.querySelectorAll('.work-card:not(.is-hidden-by-search)').length;
+          sectionEl.classList.toggle('is-hidden-section', hasActiveSearch && visibleCards === 0);
+        });
+      }
+
+      function applySearch() {
+        const query = normalize(searchInput.value);
+        clearSearchResults();
+        if (!query) return;
+
+        const tokens = query.split(' ').filter(Boolean);
+        const matchedCards = CARD_INDEX.filter(card => tokens.every(token => card.searchText.includes(token)));
+
+        resultSection.classList.add('is-active');
+        resultCountBadge.textContent = matchedCards.length + '건';
+        resultKeywordBadge.textContent = '검색어: ' + query;
+
+        if (matchedCards.length === 0) {
+          resultEmptyBox.hidden = false;
+          resultText.textContent = '검색 결과가 없어 전체 카드를 그대로 아래에 남겨둡니다.';
+          updateSectionVisibility(false);
+          resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+
+        matchedCards.forEach(card => {
+          const originalCard = sectionsContainer.querySelector('.work-card[data-card-id="' + card.id + '"]');
+          if (originalCard) originalCard.classList.add('is-hidden-by-search');
+          resultGrid.insertAdjacentHTML('beforeend', renderCardMarkup(card, true));
+        });
+
+        const remainingCount = CARD_INDEX.length - matchedCards.length;
+        resultText.textContent = '검색된 ' + matchedCards.length + '개 카드를 상단에 모았습니다. 나머지 ' + remainingCount + '개는 아래 섹션에 그대로 남겨둡니다.';
+        updateSectionVisibility(true);
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      function openOverlay(cardId, triggerEl) {
+        const card = CARD_MAP.get(cardId);
+        if (!card) return;
+        lastFocusedCard = triggerEl || document.querySelector('.work-card[data-card-id="' + cardId + '"]');
+
+        overlaySectionBadge.textContent = card.sectionTitle;
+        overlayCardNoBadge.textContent = '카드 ' + card.cardNumber;
+        overlayTitle.textContent = card.title;
+        overlaySummary.textContent = card.thumbDescription;
+        overlayLines.innerHTML = card.details.map(line => '<p class="overlay-line">' + escapeHtml(line) + '</p>').join('');
+        overlayHiddenTags.textContent = '검색 키워드: ' + card.tags.join(', ');
+
+        if (card.detailUrl) {
+          overlayDetailLink.hidden = false;
+          overlayDetailLink.href = card.detailUrl;
+          overlayDetailLink.textContent = card.detailLabel || '상세 가이드로 이동';
+        } else {
+          overlayDetailLink.hidden = true;
+          overlayDetailLink.removeAttribute('href');
+        }
+
+        overlay.hidden = false;
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        overlayCloseButton.focus();
+      }
+
+      function closeOverlay() {
+        overlay.hidden = true;
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocusedCard && typeof lastFocusedCard.focus === 'function') lastFocusedCard.focus();
+      }
+
+      document.addEventListener('click', (event) => {
+        const clickedCard = event.target.closest('.work-card');
+        if (clickedCard) { openOverlay(clickedCard.dataset.cardId, clickedCard); return; }
+        if (event.target.closest('.close-overlay')) { closeOverlay(); return; }
+        if (!overlay.hidden) {
+          const clickedDetailLink = event.target.closest('#overlayDetailLink');
+          if (clickedDetailLink) return;
+          if (event.target === overlay) closeOverlay();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        const activeElement = document.activeElement;
+        if ((event.key === 'Enter' || event.key === ' ') && activeElement && activeElement.classList.contains('work-card')) {
+          event.preventDefault();
+          openOverlay(activeElement.dataset.cardId, activeElement);
+          return;
+        }
+        if (event.key === 'Enter' && activeElement === searchInput) { applySearch(); return; }
+        if (event.key === 'Escape' && !overlay.hidden) closeOverlay();
+      });
+
+      overlayDetailLink.addEventListener('click', (event) => event.stopPropagation());
+      searchButton.addEventListener('click', applySearch);
+      resetButton.addEventListener('click', () => {
+        searchInput.value = '';
+        clearSearchResults();
+        searchInput.focus();
+      });
+
+      renderQuickNav();
+      renderSections();
+    })();
+  </script>
+</body>
+</html>
