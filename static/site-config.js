@@ -167,9 +167,16 @@ window.NEULBOM_SITE_CONFIG = {
   },
 
   footer: {
-    brand: "늘봄학교 실무 허브",
+    brand: "고주무관의 늘봄학교 행정 실무 가이드",
     note: "비공식 실무 보조 사이트",
-    trustMessage: "최종 기준은 원문 공문, 학교 자체 운영계획, 계약서, 교육지원청 안내를 우선합니다."
+
+    masterBrand: "고주무관의 늘봄학교 행정 실무 가이드",
+    editionTitle: "업무천재 고주무관의 늘봄학교 행정 실무 가이드",
+    operatorName: "업무천재 고주무관",
+    contactEmail: "edusproutcomics@naver.com",
+    trustMessage: "이 웹페이지는 개인이 만든 비공식 웹페이지입니다. 도교육청 공식 배포가 아니니, 최종 기준은 공문·지침·편람 등 공식 자료를 우선합시다.",
+    affectionLine: "본인 업무는 본인 스스로 공부할 수 있습니다.",
+    playfulAlias: "업무천재 고주무관"
   },
 
   topButton: {
